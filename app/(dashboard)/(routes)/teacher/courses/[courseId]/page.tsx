@@ -7,6 +7,7 @@ import { IconBadge } from "@/components/Icon-badge";
 
 import { TitleForm } from "./_components/TitleForm";
 import { DescriptionForm } from "./_components/DescriptionForm";
+import { ImageForm } from "./_components/ImageForm";
 
 const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
   const { userId } = auth();
@@ -49,6 +50,7 @@ const CourseIdPage = async ({ params }: { params: { courseId: string } }) => {
 
           <TitleForm initialData={course} courseId={course.id} />
           <DescriptionForm initialData={course} courseId={course.id} />
+          <ImageForm initialData={course} courseId={course.id} />
         </div>
       </div>
     </div>
