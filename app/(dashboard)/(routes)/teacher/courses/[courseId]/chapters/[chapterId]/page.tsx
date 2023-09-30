@@ -5,13 +5,13 @@ import { ArrowLeft, Eye, LayoutDashboard, Video } from "lucide-react";
 
 import { db } from "@/lib/db";
 import { IconBadge } from "@/components/Icon-badge";
-import { Banner } from "@/components/banner";
+import { Banner } from "@/components/Banner";
 
 import { ChapterTitleForm } from "./_components/ChapterTitleForm";
 import { ChapterDescriptionForm } from "./_components/ChapterDescriptionForm";
-import { ChapterAccessForm } from "./_components/chapter-access-form";
-import { ChapterVideoForm } from "./_components/chapter-video-form";
-import { ChapterActions } from "./_components/chapter-actions";
+import { ChapterAccessForm } from "./_components/ChapterAccessForm";
+import { ChapterVideoForm } from "./_components/ChapterVideoForm";
+import { ChapterActions } from "./_components/ChapterActions";
 
 const ChapterIdPage = async ({ params }: { params: { courseId: string; chapterId: string } }) => {
   const { userId } = auth();
@@ -58,7 +58,7 @@ const ChapterIdPage = async ({ params }: { params: { courseId: string; chapterId
                 <h1 className="text-2xl font-medium">Chapter Creation</h1>
                 <span className="text-sm text-slate-700">Complete all fields {completionText}</span>
               </div>
-              <ChapterActions disabled={!isComplete} courseId={params.courseId} chapterId={params.chapterId} isPublished={chapter.isPublished} />
+              <ChapterActions />
             </div>
           </div>
         </div>
@@ -85,7 +85,7 @@ const ChapterIdPage = async ({ params }: { params: { courseId: string; chapterId
               <IconBadge icon={Video} />
               <h2 className="text-xl">Add a video</h2>
             </div>
-            <ChapterVideoForm initialData={chapter} chapterId={params.chapterId} courseId={params.courseId} />
+            <ChapterVideoForm />
           </div>
         </div>
       </div>
