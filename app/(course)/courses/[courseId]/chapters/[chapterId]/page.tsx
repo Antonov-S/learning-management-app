@@ -1,10 +1,14 @@
 import { auth } from "@clerk/nextjs";
 import { redirect } from "next/navigation";
+import { File } from "lucide-react";
 
 import { getChapter } from "@/actions/get-chapter";
-
 import { Banner } from "@/components/Banner";
+import { Separator } from "@/components/ui/separator";
+import { Preview } from "@/components/Preview";
+
 import { VideoPlayer } from "./_components/VideoPlayer";
+import { CourseEnrollButton } from "./_components/CourseEnrollButton";
 
 const ChapterIdPage = async ({ params }: { params: { courseId: string; chapterId: string } }) => {
   const { userId } = auth();
@@ -34,6 +38,27 @@ const ChapterIdPage = async ({ params }: { params: { courseId: string; chapterId
         <div className="p-4">
           <VideoPlayer chapterId={params.chapterId} title={chapter.title} courseId={params.courseId} nextChapterId={nextChapter?.id} playbackId={muxData?.playbackId!} isLocked={isLocked} completeOnEnd={completeOnEnd} />
         </div>
+        <div className="p-4 flex flex-col md:flex-row items-center justify-between">
+          <h2 className="text-2xl font-semibold mb-2">{chapter.title}</h2>
+          {purchase ? <div>// TODO: Add Course Progress Button</div> : <CourseEnrollButton courseId={params.courseId} price={course.price!} />}
+        </div>
+        <Separator />
+        <div>
+          <Preview value={chapter.description!} />
+        </div>
+        {!attachments.length && (
+          <>
+            <Separator />
+            <div p-4>
+              {attachments.map(attachment => (
+                <a href={attachment.url} key={attachment.id} target="_blank" className="flex iutems-center p-3 w-full bg-sky-200 border text-sky-700 rounded-md hover:underline">
+                  <File />
+                  <p className="line-clamp-1">{attachment.name}</p>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
       </div>
     </div>
   );
