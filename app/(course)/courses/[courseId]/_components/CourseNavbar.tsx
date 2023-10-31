@@ -1,6 +1,6 @@
 import { Chapter, Course, UserProgress } from "@prisma/client";
 
-import NavbarRoutes from "@/components/NavbarRoutes";
+import { NavbarRoutes } from "@/components/NavbarRoutes";
 
 import { CourseMobileSidebar } from "./CourseMobileSidebar";
 
