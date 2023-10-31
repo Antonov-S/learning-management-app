@@ -1,4 +1,4 @@
-# Build an LMS Platform(Udemy Clone): Next.js 13, React, Stripe, Mux, Prisma, Tailwind
+# Learning Management Platform(Udemy Clone): Next.js 13, React, Stripe, Mux, Prisma, Tailwind
 
 ## Key Features:
 
@@ -16,8 +16,7 @@
 - HLS Video player using Mux
 - Rich text editor for chapter description
 - Authentication using Clerk
-- ORM using Prisma
-- MySQL database using Planetscale
+- ORM using Prisma (MySQL on Planetscale platform)
 
 ## Prerequisites
 
@@ -25,7 +24,7 @@
 
 ## Cloning the repository
 
-`https://github.com/Antonov-S/learning-management-app.git`
+[https://github.com/Antonov-S/learning-management-app.git](https://github.com/Antonov-S/learning-management-app.git)
 
 ## Install packages
 
@@ -33,26 +32,23 @@
 
 ## Setup .env file
 
-> NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
-> CLERK_SECRET_KEY=
-> NEXT_PUBLIC_CLERK_SIGN_IN_URL=
-> NEXT_PUBLIC_CLERK_SIGN_UP_URL=
-> NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=
-> NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=
->
-> DATABASE_URL=
->
-> UPLOADTHING_SECRET=
-> UPLOADTHING_APP_ID=
-
-> MUX_TOKEN_ID=
-> MUX_TOKEN_SECRET=
-
-> STRIPE_API_KEY=
-> NEXT_PUBLIC_APP_URL=http://localhost:3000
-> STRIPE_WEBHOOK_SECRET=
-
-> NEXT_PUBLIC_TEACHER_ID=
+```
+NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY=
+CLERK_SECRET_KEY=
+NEXT_PUBLIC_CLERK_SIGN_IN_URL=
+NEXT_PUBLIC_CLERK_SIGN_UP_URL=
+NEXT_PUBLIC_CLERK_AFTER_SIGN_IN_URL=
+NEXT_PUBLIC_CLERK_AFTER_SIGN_UP_URL=
+DATABASE_URL=
+UPLOADTHING_SECRET=
+UPLOADTHING_APP_ID=
+MUX_TOKEN_ID=
+MUX_TOKEN_SECRET=
+STRIPE_API_KEY=
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+STRIPE_WEBHOOK_SECRET=
+NEXT_PUBLIC_TEACHER_ID=
+```
 
 ## Setup Prisma
 
